@@ -5,12 +5,12 @@ embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-
 
 text = "islamabad is the capital of pakistan"
 
-documnt = [
+document = [
     "Pakistan is a country in South Asia.",
     "Islamabad is the capital of Pakistan.",
     "The largest city in Pakistan is Karachi."
 ]
 
-vectors = embeddings.embed_documents(documnt)
+vectors = embeddings.embed_documents(document)
 
 print(str(vectors))
