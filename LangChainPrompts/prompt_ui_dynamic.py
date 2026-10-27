@@ -17,13 +17,13 @@ template = load_prompt('template.json')
 
 
 if st.button('Summerize'):
-    # fill the placeholder
-    prompt = template.invoke({
+    chain = template | model
+    result = chain.invoke({
         'paper_input': paper_input,
         'style_input': style_input,
         'length_input': length_input
     })
-    result = model.invoke(prompt)
+
     st.write(result.content)
 
 
